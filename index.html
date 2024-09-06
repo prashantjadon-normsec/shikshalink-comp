@@ -1,20 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ShikshaLink</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Reset and Body Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #4a90e2;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+        }
+
+        /* Main Styling */
+        main {
+            flex: 1;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .class-buttons {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        button {
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #357ab8;
+        }
+
+        button:focus {
+            outline: none;
+        }
+
+        #video-feed {
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .video-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+        }
+
+        .video-card img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .video-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .video-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        footer {
+            background-color: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: auto;
+        }
+
+    </style>
 </head>
+
 <body>
     <header>
         <h1>ShikshaLink</h1>
-        <p>Offline Video Feed</p>
+        <p>Select Your Class to View Videos</p>
     </header>
-    <main id="video-feed">
-        <!-- Videos will be listed here -->
+    <main>
+        <div class="class-buttons">
+            <button onclick="loadVideos('class9Videos')">Class 9</button>
+            <button onclick="loadVideos('class10Videos')">Class 10</button>
+            <button onclick="loadVideos('class11Videos')">Class 11</button>
+            <button onclick="loadVideos('class12Videos')">Class 12</button>
+        </div>
+        <section id="video-feed">
+            <!-- Videos will be loaded here dynamically -->
+        </section>
     </main>
+
+    <footer>
+        <p>&copy; 2024 ShikshaLink. All Rights Reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
